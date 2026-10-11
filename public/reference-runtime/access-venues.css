@@ -1,0 +1,5 @@
+/* ACCESS: space between venue A, venue B and the station guide; Japanese "・" bullets. */
+#access .access-block .access-venue-next{margin-top:18px}
+#access .access-block ul{list-style:none;padding-left:0}
+#access .access-block li{padding-left:1.4em;text-indent:-1.4em}
+#access .access-block li::before{content:'・';display:inline-block;width:1.4em;text-indent:0;text-align:center}
