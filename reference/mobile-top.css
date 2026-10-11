@@ -1,0 +1,36 @@
+/* Phone TOP: horizontal title, right-aligned dates, venue list, hamburger navigation. */
+.top-menu-toggle,.hero-composition .hero-title-row,.hero-composition .hero-ticket,.hero-venue-list{display:none}
+
+@media(max-width:700px){
+ .top-header{height:auto;padding:0}
+ .top-header .brand{display:none}
+ .top-menu-toggle{position:absolute;top:42px;right:calc(7.5vw - 5px);z-index:2;display:flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;padding:0 5px;border:0;background:none;color:#000;cursor:pointer;pointer-events:auto}
+ .top-menu-toggle span{display:block;height:1.5px;background:currentColor;transition:transform .25s,opacity .2s}
+ .top-header nav{display:none}
+ .top-header.is-menu-open{position:fixed;inset:0;z-index:1000;height:100svh}
+ .top-header.is-menu-open nav{position:fixed;inset:0;z-index:1;display:flex;flex-direction:column;justify-content:center;gap:6px;width:auto;padding:0 12vw;background:#fff}
+ .top-header.is-menu-open nav a:nth-child(n){width:100%;height:56px;min-height:56px;padding:0;justify-content:flex-start}
+ .top-header.is-menu-open nav img{height:20px}
+ .is-menu-open .top-menu-toggle span:nth-child(1){transform:translateY(9.75px) rotate(45deg)}
+ .is-menu-open .top-menu-toggle span:nth-child(2),.is-menu-open .top-menu-toggle span:nth-child(3){opacity:0}
+ .is-menu-open .top-menu-toggle span:nth-child(4){transform:translateY(-9.75px) rotate(-45deg)}
+
+ .hero-art .hero-brush{left:1vw;top:max(57vw,29svh);width:54vw;height:54vw}
+ .hero-composition .hero-title-ja,.hero-composition .hero-venue{display:none}
+ .hero-composition .hero-title-row{display:block;left:-1.3vw;top:8vw;width:79vw;height:auto}
+ .hero-composition .hero-wordmark{left:0;right:auto;top:48.2vw;bottom:auto;width:58.5vw;height:auto}
+ .hero-composition .hero-dates{left:auto;right:3.6vw;top:38svh;bottom:auto;width:38vw;height:auto;opacity:.78}
+ .hero-composition .hero-ticket{position:absolute;display:block;right:1vw;bottom:3.8svh;width:50.6vw;height:21.6vw;background:#000;
+  -webkit-mask:radial-gradient(circle at 63% 0,#0000 2vw,#000 calc(2vw + .5px)) top/100% 51% no-repeat,radial-gradient(circle at 63% 100%,#0000 2vw,#000 calc(2vw + .5px)) bottom/100% 51% no-repeat;
+  mask:radial-gradient(circle at 63% 0,#0000 2vw,#000 calc(2vw + .5px)) top/100% 51% no-repeat,radial-gradient(circle at 63% 100%,#0000 2vw,#000 calc(2vw + .5px)) bottom/100% 51% no-repeat}
+
+ .hero-venue-list{position:absolute;left:4vw;bottom:18svh;z-index:4;display:block;color:#000;font:400 3.33vw/1.45 'Zen Kaku Gothic Antique',sans-serif;letter-spacing:.02em}
+ .hero-venue-list>div+div{margin-top:.76em}
+ .hero-venue-building{display:flex;align-items:baseline;gap:.45em;margin:0 0 .15em;font-size:1.15em;font-weight:700;line-height:1.3}
+ .hero-venue-list ul{margin:0;padding:0;list-style:none}
+ .hero-venue-list li{display:flex;align-items:center;min-height:1.45em;white-space:nowrap}
+ .hero-venue-tag{display:inline-flex;align-items:center;justify-content:center;flex:none;width:3.9em;height:1.4em;margin-right:1.1em;background:#000;color:#fff;font-size:.7em;font-weight:500;line-height:1}
+ .hero-venue-floor{min-width:1.3em;margin-right:.62em}
+}
+
+@media(max-width:700px) and (prefers-reduced-motion:reduce){.top-menu-toggle span{transition:none}}
