@@ -769,6 +769,9 @@ dialog::backdrop {
 #access .access-contact {
   font-family: system-ui, sans-serif;
 }
+#access .access-block .access-venue-next {
+  margin-top: 18px;
+}
 @media (width < theme(--breakpoint-tablet)) {
   #access .access-information {
     grid-template-columns: 1fr;
