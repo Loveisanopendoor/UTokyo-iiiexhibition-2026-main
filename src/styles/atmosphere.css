@@ -769,66 +769,8 @@ dialog::backdrop {
 #access .access-contact {
   font-family: system-ui, sans-serif;
 }
-#access .access-venue + .access-venue {
-  margin-top: 20px;
-}
-#access .access-venue-name {
-  display: flex;
-  align-items: baseline;
-  gap: 0.5em;
-  margin: 0 0 10px;
-  font-size: 1.08em;
-  font-weight: 500;
-}
-#access .access-venue-letter {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.3em;
-  height: 1.3em;
-  background: #304a4c;
-  color: #fff;
-  font-size: 0.72em;
-  font-weight: 700;
-  line-height: 1;
-}
-#access .access-venue-rooms {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-#access .access-venue-rooms li {
-  display: flex;
-  align-items: center;
-  min-height: 2.15em;
-}
-#access .access-venue-tag {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: none;
-  width: 3.6em;
-  height: 1.5em;
-  margin-right: 0.9em;
-  background: #304a4c;
-  color: #fff;
-  font-size: 0.68em;
-  font-weight: 500;
-  line-height: 1;
-}
-#access .access-venue-floor {
-  min-width: 2em;
-  margin-right: 0.6em;
-}
-#access .access-venue-stations {
-  margin-top: 14px;
-  font-size: 0.84em;
-  line-height: 1.85;
-}
-#access .access-venue-stations strong {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: 500;
+#access .access-block .access-venue-next {
+  margin-top: 18px;
 }
 @media (width < theme(--breakpoint-tablet)) {
   #access .access-information {
@@ -839,9 +781,6 @@ dialog::backdrop {
   #access .access-block p,
   #access .access-block li {
     font-size: 12px;
-  }
-  #access .access-venue + .access-venue {
-    margin-top: 16px;
   }
 }
 #members {
