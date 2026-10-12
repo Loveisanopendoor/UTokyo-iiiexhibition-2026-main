@@ -127,8 +127,11 @@ test('announcement dialogs open and close with keyboard focus restored', async (
   await expect(page.locator('#notice-body')).toContainText('11/14');
   await page.keyboard.press('Escape');
   await expect(trigger).toBeFocused();
-  await page.locator('[data-notice="information"]').click();
-  await expect(page.locator('#notice-heading')).toContainText('登壇者が確定');
+  await trigger.click();
+  await expect(page.locator('#announce-detail .talk-register')).toHaveAttribute(
+    'href',
+    'https://iii-exhibition2026-talkevent.peatix.com/',
+  );
   await page.locator('.notice-close').click();
   await expect(page.locator('#announce-detail')).not.toBeVisible();
 });
