@@ -333,3 +333,45 @@ body::after{display:none}
  #detail{padding:56px 24px 32px}
  #detail .detail-grid{grid-template-columns:1fr;gap:28px}
 }
+
+/* Phone catalog. Desktop keeps the orbit; this block only appears under 700px. */
+.works-mobile{display:none}
+@media(max-width:700px){
+ #works{height:auto;min-height:0;overflow:visible;padding:28px 0 80px}
+ #works::after{display:none}
+ #works>.wave-gallery{height:auto;min-height:0}
+ #works .wave-toolbar,#works .wave-stage,#works .wave-caption,#works .wave-controls,#works .wave-list,#works .spatial-status{display:none!important}
+ #works .works-mobile{display:block}
+ #works .works-mobile-filters{display:flex;justify-content:flex-start;align-items:center;gap:16px;margin:4px 0 26px;padding:0 16px}
+ #works .works-mobile-filters button{height:auto;min-height:28px;padding:4px 10px;color:#111;font:700 13px/20px 'Zen Kaku Gothic Antique',sans-serif;letter-spacing:.04em;white-space:nowrap}
+ #works .works-mobile-list{border:1px solid #67c15b}
+ #works .works-mobile-feature,#works .works-mobile-card,#works .works-mobile-back{font-family:inherit;cursor:pointer}
+ #works .works-mobile-feature,#works .works-mobile-card{display:block;width:100%;margin:0;padding:0;border:0;background:#fff;color:#1a1a1a;text-align:center}
+ #works .works-mobile-feature{border-bottom:1px solid #67c15b}
+ #works .works-mobile-frame{display:block;padding:16px 14px 0;border:0}
+ #works .works-mobile-tags{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:0 0 36px}
+ #works .works-mobile-feature .works-mobile-tags,#works .works-mobile-detail .works-mobile-tags{justify-content:flex-start;gap:10px}
+ #works .works-mobile-feature .works-mobile-tags{margin-bottom:52px}
+ #works .works-mobile-tag{display:inline-flex;align-items:center;justify-content:center;min-width:68px;height:22px;padding:0 8px;border:1px solid #54bc4e;background:#fff;color:#54bc4e;font:700 11px/1 'Zen Kaku Gothic Antique',sans-serif;letter-spacing:.06em}
+ #works .works-mobile-tag.is-solid{border-color:#111;background:#111;color:#fff}
+ #works .works-mobile-feature img,#works .works-mobile-card img,#works .works-mobile-detail-image{display:block;width:100%;height:auto}
+ #works .works-mobile-feature img{width:56%;margin:0 auto}
+ #works .works-mobile-feature-title{display:block;margin:36px 8px 40px;color:#111;font:500 22px/1.25 'Barlow',sans-serif;letter-spacing:.01em}
+ #works .works-mobile-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;margin:0;background:#fff}
+ #works .works-mobile-grid.is-filtered{margin-top:0}
+ #works .works-mobile-card{display:flex;flex-direction:column;align-items:stretch;padding:14px 10px 22px;border-right:1px solid #67c15b;border-bottom:1px solid #67c15b}
+ #works .works-mobile-card:nth-child(2n){border-right:0}
+ #works .works-mobile-card:last-child,#works .works-mobile-card:nth-child(odd):nth-last-child(2){border-bottom:0}
+ #works .works-mobile-card img{width:68%;aspect-ratio:1;height:auto;object-fit:contain;margin:0 auto}
+ #works .works-mobile-card-title{display:block;margin-top:20px;color:#111;font:500 15px/1.3 'Barlow',sans-serif}
+ #works .works-mobile-detail{padding:0}
+ #works .works-mobile-detail-image{width:100%;border-top:1px solid #67c15b;border-bottom:1px solid #67c15b}
+ #works .works-mobile-detail-tags{margin:20px 18px 28px}
+ #works .works-mobile-detail-tags .works-mobile-tags{margin:0}
+ #works .works-mobile-detail h3{margin:0 18px 6px;color:#46a83d;font:400 22px/1.3 'Barlow',sans-serif;text-align:left}
+ #works .works-mobile-detail-meta{margin:0 18px 0;color:#46a83d;font:400 13px/1.7 'Zen Kaku Gothic Antique',sans-serif;text-align:left}
+ #works .works-mobile-detail-body{margin:28px 18px 80px;color:#46a83d;font:400 13px/1.95 'Zen Kaku Gothic Antique',sans-serif;text-align:left}
+ #works .works-mobile-back{display:flex;align-items:center;justify-content:center;min-width:148px;min-height:42px;margin:0 auto 12px;padding:8px 28px;border:1px solid #67c15b;border-radius:999px;background:#fff;color:#46a83d;font:500 13px/1 'Zen Kaku Gothic Antique',sans-serif}
+ #works .works-mobile-empty{margin:28px 0;text-align:center;font:400 13px/1.7 'Zen Kaku Gothic Antique',sans-serif}
+ #works .works-mobile-feature:focus-visible,#works .works-mobile-card:focus-visible,#works .works-mobile-back:focus-visible{outline:1px dashed #052d03;outline-offset:3px}
+}

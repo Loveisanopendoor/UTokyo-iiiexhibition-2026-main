@@ -56,8 +56,37 @@ test('all reference sections, canvases and image assets load without errors', as
 
 test('venue filters, real-work list, dialog navigation and focus return match the reference', async ({
   page,
+  isMobile,
 }) => {
   await ready(page, '/preview.html?prototype=works');
+  if (isMobile) {
+    await expect(page.locator('.works-mobile')).toBeVisible();
+    await expect(page.locator('.wave-view')).toBeHidden();
+    await expect(page.locator('.works-mobile-feature')).toBeVisible();
+    await page.locator('[data-mobile-venue="0"]').click();
+    await expect(page.locator('.works-mobile-feature')).toHaveCount(0);
+    await expect(page.locator('.works-mobile-card').first()).toContainText(
+      'Memory Landscapes',
+    );
+    await page.locator('[data-mobile-venue="1"]').click();
+    await expect(page.locator('.works-mobile-card').first()).toContainText(
+      'Mollusk',
+    );
+    await page.locator('[data-mobile-venue="all"]').click();
+    const trigger = page.locator('.works-mobile-feature');
+    await trigger.click();
+    await expect(page.locator('.works-mobile-detail')).toBeVisible();
+    await expect(page.locator('.works-mobile-detail h3')).toHaveText(
+      'Memory Landscapes',
+    );
+    await expect(page.locator('.works-mobile-detail-body')).toContainText(
+      'ダミーテキストです',
+    );
+    await page.locator('.works-mobile-back').click();
+    await expect(page.locator('.works-mobile-list')).toBeVisible();
+    await expect(trigger).toBeFocused();
+    return;
+  }
   await page.locator('.wave-view').click();
   await expect(page.locator('.wave-list button:visible')).toHaveCount(2);
   await page.locator('[data-venue="0"]').click();
