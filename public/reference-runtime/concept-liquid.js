@@ -8,7 +8,7 @@
   finalParagraph.before(finalHold);finalHold.append(finalParagraph);
   const layer=document.createElement('div');layer.className='concept-liquid';layer.setAttribute('aria-hidden','true');
   const canvas=document.createElement('canvas');layer.append(canvas);pin.append(layer);
-  layer.style.backgroundImage="url('assets/concept/figma-latest-1.png')";
+  layer.style.backgroundImage="url('assets/concept/concept-bg-1.webp')";
   layer.style.backgroundSize='cover';layer.style.backgroundPosition='center';canvas.hidden=true;
   const dust=document.createElement('canvas');dust.className='concept-exit-dust';document.body.append(dust);
   dust.setAttribute('aria-hidden','true');
@@ -106,11 +106,11 @@
   const clamp=x=>Math.max(0,Math.min(1,x));
   const smooth=x=>{x=clamp(x);return x*x*(3-2*x);};
   const urls=[
-    'assets/concept/figma-latest-1.png',
-    'assets/concept/figma-latest-2.png',
-    'assets/concept/figma-latest-3.png',
-    'assets/concept/figma-latest-4.png',
-    'assets/concept/figma-latest-4.png'
+    'assets/concept/concept-bg-1.webp',
+    'assets/concept/concept-bg-2.webp',
+    'assets/concept/concept-bg-3.webp',
+    'assets/concept/concept-bg-4.webp',
+    'assets/concept/concept-bg-5.webp'
   ];
   let program,loc;
   function shader(type,source){
