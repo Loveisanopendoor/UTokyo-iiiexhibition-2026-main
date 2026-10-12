@@ -42,7 +42,7 @@
     "typography.css": "a45d47b53e2ce9f134a55d675e3e1c4b6a76390492ec8144a2d125bd2e0b0112",
     "works-person.css": "8735d979d6bcbd96432b8ba59da4aca8918c653367dd0d4877d3ce6df3608fd5",
     "top-redesign.css": "c730396e40e517f11f06b01020066f30b0f764baf84a20ad70715fd3b9e02ca9",
-    "announce.css": "291348f9e5a30aad7bf8b2547b1d7bd14d2ae73f0285f95ad1768ffc8825d334",
+    "announce.css": "5fc3c956bb46ea6a02fb36dd8cbda133c2e099b23b599403060c8a3cb450236c",
     "archive-columns.css": "15b9c456beb766e16d7f58cceab6646ded8cc48683d752ea23abf5dc52f73285",
     "members-marker-main.css": "e6120af4431309a617654624e10982f83e40d7bc8de9c36398c5dce27d47b17c",
     "prototype-review.css": "7762d8936bce8b83c7ac5b0b203ee67721f17afdcbb3d1dd1f156639af642bbf",
@@ -62,7 +62,7 @@
     "smooth-scroll.js": "21823718d49a2a2113609ed98406ede652f478d3558ac34d7eb0dd7dd33eb7c3",
     "hero-fragments.js": "b86eb7eeb7f4fb5dd5cb75178b62d832eb7633f4ab000c0b60c67dcf5af466ca",
     "concept-liquid.js": "28485a7f92ad548f2e356f479f8113ff4e2ba4862ae2be7387a46a02eb64bfeb",
-    "announce-flow.js": "556d94e8bafb7f1c06b5a8de862d5d93901a7cafe6f6bc1a242be3c9b2698631",
+    "announce-flow.js": "f6100ec03d361535654713963ebe7ceb109b0dc67f8822adbb97a7083dbf17de",
     "prototype-review.js": "b73efc200541ced50f0d05a72daabb13655850f82b923cabc029e3c9af54a2b0",
     "mobile-menu.js": "9028f1e2e57c22ee657d943e6a5f7d044b368ca7f1e360629376f6824e1e75d3"
   }
