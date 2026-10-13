@@ -136,7 +136,7 @@ test('announcement dialogs open and close with keyboard focus restored', async (
   await expect(page.locator('#announce-detail')).not.toBeVisible();
 });
 
-test('archive categories show all 29 records and support keyboard and touch previews', async ({
+test('archive categories show all 30 records and support keyboard and touch previews', async ({
   page,
   isMobile,
 }) => {
@@ -148,7 +148,7 @@ test('archive categories show all 29 records and support keyboard and touch prev
   await expect(first).toHaveClass(/is-active/);
   await expect(first).toHaveAttribute('target', '_blank');
   await page.locator('[data-group="番外展"]').click();
-  await expect(page.locator('.archive-column-link')).toHaveCount(14);
+  await expect(page.locator('.archive-column-link')).toHaveCount(15);
   await expect(page.locator('[data-group="番外展"]')).toHaveAttribute(
     'aria-pressed',
     'true',
