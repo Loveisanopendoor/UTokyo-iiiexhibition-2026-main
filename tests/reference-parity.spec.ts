@@ -97,15 +97,19 @@ for (const viewport of [
           });
         expect(changed, `${section}: differing pixels`).toBe(0);
       }
-      if (viewport.width >= 700) {
-        for (const page of [original, actual]) {
-          await page.locator('.wave-view').click();
-          await page
-            .locator('#works')
-            .evaluate((element) =>
-              element.scrollIntoView({ block: 'start', behavior: 'instant' }),
-            );
-        }
+      for (const page of [original, actual]) {
+        await page
+          .locator(
+            viewport.width >= 700
+              ? '[data-desktop-venue="0"]'
+              : '[data-mobile-venue="0"]',
+          )
+          .click();
+        await page
+          .locator('#works')
+          .evaluate((element) =>
+            element.scrollIntoView({ block: 'start', behavior: 'instant' }),
+          );
       }
       const a = PNG.sync.read(
         await original.screenshot({ animations: 'disabled' }),
