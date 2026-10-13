@@ -21,7 +21,7 @@ test('all reference sections, canvases and image assets load without errors', as
       errors.push(`${response.status()} ${response.url()}`);
   });
   await ready(page);
-  await expect(page.locator('.wave-card')).toHaveCount(30);
+  await expect(page.locator('#works .works-desktop, #works .works-mobile')).toHaveCount(2);
   await expect(page.locator('.archive-column-link')).toHaveCount(15);
   for (const id of [
     'top',
@@ -61,7 +61,7 @@ test('venue filters, real-work list, dialog navigation and focus return match th
   await ready(page, '/preview.html?prototype=works');
   if (isMobile) {
     await expect(page.locator('.works-mobile')).toBeVisible();
-    await expect(page.locator('.wave-view')).toBeHidden();
+    await expect(page.locator('.wave-stage')).toHaveCount(0);
     await expect(page.locator('.works-mobile-feature')).toBeVisible();
     await page.locator('[data-mobile-venue="0"]').click();
     await expect(page.locator('.works-mobile-feature')).toHaveCount(0);
@@ -87,34 +87,41 @@ test('venue filters, real-work list, dialog navigation and focus return match th
     await expect(trigger).toBeFocused();
     return;
   }
-  await page.locator('.wave-view').click();
-  await expect(page.locator('.wave-list button:visible')).toHaveCount(2);
-  await page.locator('[data-venue="0"]').click();
-  await expect(page.locator('.wave-list button:visible')).toHaveCount(1);
-  await expect(page.locator('.wave-list button:visible')).toContainText(
+  await expect(page.locator('.works-desktop')).toBeVisible();
+  await expect(page.locator('.works-desktop-card')).toHaveCount(11);
+  await expect(page.locator('.wave-stage')).toHaveCount(0);
+  await page.locator('[data-desktop-venue="0"]').click();
+  await expect(
+    page.locator('.works-desktop-card:not(.is-placeholder)').first(),
+  ).toContainText(
     'Memory Landscapes',
   );
-  await page.locator('[data-venue="1"]').click();
-  await expect(page.locator('.wave-list button:visible')).toContainText(
+  await page.locator('[data-desktop-venue="1"]').click();
+  await expect(
+    page.locator('.works-desktop-card:not(.is-placeholder)').first(),
+  ).toContainText(
     'Mollusk',
   );
-  await page.locator('[data-venue="all"]').click();
-  const trigger = page.locator('.wave-list button:visible').first();
+  await page.locator('[data-desktop-venue="invite"]').click();
+  await expect(page.locator('.works-desktop-card.is-invited')).toContainText(
+    '招待作品タイトル',
+  );
+  await page.locator('[data-desktop-venue="all"]').click();
+  const trigger = page
+    .locator('button.works-desktop-card:not(.is-placeholder)')
+    .first();
   await trigger.click();
   await expect(page.locator('#detail-title')).toHaveText('Memory Landscapes');
   await expect(page.locator('#next-work')).toBeHidden();
   await page.keyboard.press('Escape');
   await expect(trigger).toBeFocused();
-  await page.locator('.wave-list button:visible').nth(1).click();
+  await page.locator('[data-desktop-venue="1"]').click();
+  await page
+    .locator('button.works-desktop-card:not(.is-placeholder)')
+    .first()
+    .click();
   await expect(page.locator('#detail-title')).toHaveText('Mollusk');
   await page.locator('.close-detail').click();
-  await page.locator('.wave-view').click();
-  await expect(page.locator('.wave-stage')).toBeVisible();
-  await page.locator('.wave-stage').focus();
-  await page.keyboard.press('ArrowLeft');
-  await expect(page.locator('.wave-card:focus')).toHaveCount(1);
-  await page.keyboard.press('Enter');
-  await expect(page.locator('#detail-title')).toHaveText('Memory Landscapes');
 });
 
 test('announcement dialogs open and close with keyboard focus restored', async ({

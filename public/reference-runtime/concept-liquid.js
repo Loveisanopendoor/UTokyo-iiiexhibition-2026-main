@@ -13,7 +13,6 @@
   const dust=document.createElement('canvas');dust.className='concept-exit-dust';document.body.append(dust);
   dust.setAttribute('aria-hidden','true');
   Object.assign(dust.style,{position:'fixed',inset:'0',width:'100%',height:'100%',zIndex:'9',pointerEvents:'none'});
-  const worksStage=document.querySelector('#works .wave-stage');
   const dg=dust.getContext('2d');let grains=null,grainSource=null,glyphs=[];
   function dissolve(amount){
     const w=pin.clientWidth,h=pin.clientHeight;
@@ -21,7 +20,7 @@
     if(dust.width!==w||dust.height!==h){dust.width=w;dust.height=h;grains=null;}
     dg.clearRect(0,0,w,h);
     const vortex=document.querySelector('.hero-particles');
-    if(amount<=0){grains=null;section.style.opacity='1';if(vortex)vortex.style.visibility='';if(worksStage)worksStage.style.opacity='';return;}
+    if(amount<=0){grains=null;section.style.opacity='1';if(vortex)vortex.style.visibility='';return;}
     if(!grains){
       const sample=document.createElement('canvas');sample.width=w;sample.height=h;
       const g=sample.getContext('2d',{willReadFrequently:true});
@@ -96,7 +95,6 @@
         dg.fillRect((x+dot.x)*(1-travel)+tx*travel+Math.sin(travel*Math.PI)*(dot.j-.5)*70,(y+dot.y)*(1-travel)+ty*travel,1.6,1.6);
       }
     }
-    if(worksStage)worksStage.style.opacity=String(smooth((amount-.94)/.06));
     dg.globalAlpha=1;section.style.opacity=String(1-smooth(amount/.12));
   }
   const gl=canvas.getContext('webgl',{alpha:false,antialias:false});
